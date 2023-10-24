@@ -2,7 +2,10 @@ ray==1.8.0
 ray[tune]==1.8.0
 ray[rllib]==1.8.0
 icecream==2.1.3
-torch==1.9.0
+# torch==1.9.0
+torch==1.9.0+cu111
+torchvision==0.10.0+cu111
+torchaudio==0.9.0
 pettingzoo==1.12.0
 pettingzoo[mpe]==1.12.0
 supersuit==3.2.0
@@ -10,3 +13,10 @@ numpy==1.20.3
 importlib-metadata==4.13.0
 gym==0.20.0
 PyYAML
+tensorboard
+protobuf==3.20.*
+pyglet==1.5.11
+#this one below let the gpu work but brings other library conflicts 
+#pip install --pre torch torchvision torchaudio --index-url https://download.pytorch.org/whl/nightly/cu121
+# but this should work, because it wont change the version of torch only the cuda version
+# pip install torch==1.9.0+cu111 torchvision==0.10.0+cu111 torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html
